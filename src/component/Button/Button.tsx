@@ -15,7 +15,7 @@
 // export default Button;
 
 "use client";
-import CallbackModal from "@/src/pages/Form/Form";
+import CallbackModal from "@/src/component/Form/Form";
 import React, { useState } from "react";
 
 const Button = () => {
