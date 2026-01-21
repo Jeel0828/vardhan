@@ -16,16 +16,16 @@ const Configurations = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse rounded-xl overflow-hidden shadow-lg bg-white">
+          <table className="table table-bordered align-middle text-center bg-white w-full min-w-[320px] md:min-w-[600px] lg:min-w-[700px]">
             <thead>
-              <tr className="bg-[#5b5300] text-white text-lg">
-                <th className="py-4 px-6 text-center font-semibold">
+              <tr className="bg-[#5b5300] text-white text-sm lg:text-lg">
+                <th className="py-4 px-4 md:px-6 md:py-4 text-center font-normal lg:font-semibold">
                   Configuration
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">
-                  Carpet Area (sq. ft.)
+                <th className="py-4 px-4 md:px-6 md:py-4 text-center font-normal lg:font-semibold">
+                  Carpet Area
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-4 px-4 md:px-6 md:py-4 text-center font-normal lg:font-semibold">
                   Starting Price
                 </th>
               </tr>
@@ -33,25 +33,37 @@ const Configurations = () => {
 
             <tbody className="text-[#5b5300] text-lg">
               <tr className="border-t">
-                <td className="py-6 px-6 text-center font-medium">2 BHK</td>
-                <td className="py-6 px-6 text-center">669 – 675</td>
-                <td className="py-6 px-6 text-center font-semibold">
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-normal lg:font-medium">
+                  2 BHK
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center">
+                  669 – 675
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-semibold">
                   ₹1.80 Cr*
                 </td>
               </tr>
 
               <tr className="border-t bg-[#f8f9ef]">
-                <td className="py-6 px-6 text-center font-medium">2.5 BHK</td>
-                <td className="py-6 px-6 text-center">883 – 937</td>
-                <td className="py-6 px-6 text-center font-semibold">
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-normal lg:font-medium">
+                  2.5 BHK
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center">
+                  883 – 937
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-semibold">
                   ₹2.38 Cr*
                 </td>
               </tr>
 
               <tr className="border-t">
-                <td className="py-6 px-6 text-center font-medium">3 BHK</td>
-                <td className="py-6 px-6 text-center">1022 – 1047</td>
-                <td className="py-6 px-6 text-center font-semibold">
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-normal lg:font-medium">
+                  3 BHK
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center">
+                  1022 – 1047
+                </td>
+                <td className="py-2 px-3 md:px-6 md:py-4 text-center font-normal lg:font-semibold">
                   ₹2.75 Cr*
                 </td>
               </tr>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Expert = () => {
   return (
-    <section className="w-full py-12">
+    <section className="w-full py-12 mt-10">
       <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col items-center">
         <h2
           className="text-4xl lg:text-[40px] text-[#58510d] font-normal text-center mb-4"
