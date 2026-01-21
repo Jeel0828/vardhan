@@ -16,13 +16,27 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    "Home",
-    "Location Advantages",
-    "Project Specifications",
-    "About",
-    "E-Brochure",
-    "Contact Us",
+    { label: "Home", id: "home" },
+    { label: "Overview", id: "overview" },
+    { label: "Project Specifications", id: "floorplan" },
+    { label: "About", id: "about" },
+    { label: "E-Brochure", id: "brochure" },
+    { label: "Contact Us", id: "contact" },
   ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const headerOffset = 80; // height of header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <header
@@ -39,15 +53,15 @@ const Header = () => {
           />
         </div>
 
-        <nav className="hidden cursor-pointer lg:flex items-center gap-8 text-sm font-medium tracking-wide text-gray-800">
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-gray-800">
           {menuItems.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="uppercase hover:text-lime-600 transition"
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="uppercase cursor-pointer hover:text-lime-600 transition"
             >
-              {item}
-            </a>
+              {item.label}
+            </button>
           ))}
         </nav>
 
@@ -59,26 +73,36 @@ const Header = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white shadow-md"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.35 }}
+            className="fixed top-0 right-0 w-full h-screen bg-white z-50 lg:hidden"
           >
-            <nav className="flex flex-col px-6 py-4 gap-4 text-gray-800">
+            <div className="flex justify-end p-6">
+              <button
+                className="cursor-pointer text-gray-800"
+                onClick={() => setIsOpen(false)}
+              >
+                <X size={32} />
+              </button>
+            </div>
+
+            <nav className="flex flex-col items-center h-full gap-8 text-lg font-semibold text-gray-800">
               {menuItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="uppercase font-medium tracking-wide hover:text-lime-600"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setIsOpen(false);
+                  }}
+                  className="uppercase hover:text-lime-600 transition"
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </button>
               ))}
             </nav>
           </motion.div>

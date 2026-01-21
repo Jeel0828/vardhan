@@ -45,7 +45,7 @@ const stats = [
 
 const About = () => {
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white py-24" id="about">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}

@@ -14,11 +14,6 @@ const floorPlan = [
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
   },
   {
-    title: "Kids' Play Area & Party Zone",
-    image:
-      "https://images.unsplash.com/photo-1587818541473-991e988a7c5b?w=800&q=80",
-  },
-  {
     title: "Outdoor Fitness Zone",
     image:
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
@@ -75,7 +70,7 @@ export default function FloorPlan() {
   };
 
   return (
-    <section className="w-full bg-[#fff] py-20 relative overflow-hidden">
+    <section className="w-full bg-[#fff] py-20 relative overflow-hidden" id="floorplan">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#c7d35b]/5 rounded-full blur-3xl animate-pulse"></div>
         <div

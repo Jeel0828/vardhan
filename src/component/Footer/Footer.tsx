@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#c7cf6a] w-full py-20">
+    <footer className="bg-[#c7cf6a] w-full py-20" id="contact">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#5a5300] mb-3">
           Have questions or want to schedule a site visit?

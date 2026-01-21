@@ -5,7 +5,7 @@ import overviewImg from "../../assest/about.webp";
 
 const Overview = () => {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20" id="overview">
       <div className="max-w-6xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -10 }}
