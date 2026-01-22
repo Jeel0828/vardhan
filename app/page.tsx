@@ -16,8 +16,38 @@ import Recognition from "@/src/component/Recognition/Recognition";
 import Image from "next/image";
 
 export default function Home() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: "Vardhan Project",
+    url: "https://vardhanproject.com",
+    telephone: "+91 9773069318",
+    description:
+      "Premium residential properties with world-class amenities and expert consultation",
+    logo: "https://vardhanproject.com/logo.png",
+    image: "https://vardhanproject.com/og-image.jpg",
+    sameAs: [
+      "https://www.facebook.com/vardhanproject",
+      "https://www.instagram.com/vardhanproject",
+      "https://www.twitter.com/vardhanproject",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Mulund, Mumbai",
+      addressLocality: "Mumbai",
+      addressRegion: "Maharashtra",
+      postalCode: "400080",
+      addressCountry: "IN",
+    },
+    areaServed: "Mumbai, Maharashtra, India",
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       <Header />
       <Hero />
       <Overview />
