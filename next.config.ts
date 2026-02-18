@@ -38,6 +38,10 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
+          {
+            key: "Accept-CH",
+            value: "DPR, Viewport-Width, Width",
+          },
         ],
       },
       {
@@ -46,6 +50,15 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Type",
             value: "application/xml; charset=utf-8",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

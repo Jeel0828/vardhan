@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   creator: "Vardhan",
   publisher: "Vardhan",
   robots: "index, follow",
+  verification: {
+    google: "your-google-verification-code", // Replace with actual verification code
+  },
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -72,6 +75,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
